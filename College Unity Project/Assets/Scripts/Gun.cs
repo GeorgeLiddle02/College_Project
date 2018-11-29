@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Gun : MonoBehaviour {
 
@@ -17,13 +16,17 @@ public class Gun : MonoBehaviour {
     }
     void Shoot()
         {
+
             RaycastHit hit;
             if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
             {
                 Debug.Log(hit.transform.name);
 
-                Target hit.transform.getComponent<Target>();
+                Target target = hit.transform.GetComponent<Target>();
                 if (target != null)
+            {
+                target.TakeDamage(damage);
             }
-        }
+         }
+     }
 }

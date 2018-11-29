@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Target : MonoBehaviour {
 
@@ -10,10 +9,10 @@ public class Target : MonoBehaviour {
         health -= amount;
         if (health <= 0f)
         {
-            Die(;)
+            Die();
         }
     }
-    void  Die()
+    void Die()
     {
         Destroy(gameObject);
     }
